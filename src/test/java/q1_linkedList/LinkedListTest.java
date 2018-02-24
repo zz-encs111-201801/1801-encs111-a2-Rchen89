@@ -70,6 +70,7 @@ class LinkedListTest {
             void contains() {
                 assertEquals(true, standard.contains(8));
                 assertEquals(false, standard.contains(2));
+                assertEquals(true, standard.contains(4));
             }
         }
 
@@ -100,20 +101,20 @@ class LinkedListTest {
 
             @Test
             void remove() {
-                standard.remove(2);
-                check("[6, 7, 8, 4]", standard);
+                standard.remove(5);
+                check("[6, 7, 3, 8, 4]", standard);
             }
 
             @Test
             void insert() {
-                standard.insert(2, 9);
-                check("[6, 7, 9, 3, 8, 4]", standard);
+                standard.insert(3, 9);
+                check("[6, 7, 3, 9, 8, 4]", standard);
             }
 
             @Test
             void replace() {
-                standard.replace(2, 9);
-                check("[6, 7, 9, 8, 4]", standard);
+                standard.replace(4, 9);
+                check("[6, 7, 3, 8, 9]", standard);
             }
         }
 
